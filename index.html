@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/256656d12a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header_nav-links">
+            <div class="header_logo">BOOK STORE</div>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Sản Phẩm</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+            </ul>
+            <div class="header_show-nav">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="introduction">
+        <div class="container">
+            <div class="introduction_menu">
+                <div class="introduction_option">
+                    <div class="introduction_title">
+                        <h3>Danh Mục Sản Phẩm</h3>
+                    </div>
+                    <div class="introduction_list-option">
+                        <ul>
+                            <li><a href="#">Sách Tiếng Việt</a><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="#">Sách Ngoại Văn</a><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="#">Sách Thiếu Nhi</a><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="#">Sách Văn Học</a><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="#">Sách Tham Khảo</a><i class="fas fa-chevron-right"></i></li>
+                            <li><a href="#">Sách Khoa Học Kĩ Thuật</a><i class="fas fa-chevron-right"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="introduction_banner">
+                <div class="banner_image">
+                     <!-- <img src="images/banner.jpg" alt=""> -->
+                   
+                </div> 
+
+
+            </div>
+        </div>
+    </div>
+    <div class="show-slide">
+        <div class="show-slide_container">
+            <button class="btn left-btn hide">
+                <img src="images/left-arrow.svg" alt="">
+            </button>
+
+            <div class="carousel-container">
+                <ul class="carousel">
+                    <li class="slide active">
+                        <img src="images/books_texture3017.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/202019-cool-books-background-2560x1440-ipad-retina.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/ac26551efe0f4188a3f2334cd91f1013.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn right-btn">
+                <img src="images/right-arrow.svg" alt="">
+            </button>
+
+            <div class="nav">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+        <div class="container">
+            <div class="products_options">
+                <p>Sắp Xếp Theo :</p>
+                <ul>
+                    <li>Giá Thấp</li>
+                    <li>Giá Cao</li>
+                    <li>Tên Sản Phẩm A-Z</li>
+                    <li>Tên Sản Phẩm Z-A</li>
+                </ul>
+            </div>
+            <div class="products-items">
+                <!-- <div class="products-items_product">
+                    <img src="images/ao_da.jpg" alt="">
+                    <div class="products-items_info">
+                        <p class="name">Ảo dạ</p>
+                        <p class="price"><span>55000</span><i class="fas fa-shopping-cart"></i></p>
+                    </div>
+                </div>
+                <div class="products-items_product">
+                    <img src="images/ao_da.jpg" alt="">
+                </div>
+                <div class="products-items_product">
+                    <img src="images/ao_da.jpg" alt="">
+                </div>
+                <div class="products-items_product">
+                    <img src="images/ao_da.jpg" alt="">
+                </div> -->
+            </div>
+            <div class="products_paging">
+                <ul>
+                    <li class="btn-prev btn active fas fa-angle-left"></li>
+                    <div class="number-page" id="number-page">
+                        <ul>
+
+                        </ul>
+                    </div>
+                    <li class="btn-next btn fas fa-angle-right"></li>
+                </ul>
+                <!-- <select name="number-item-one-page" id="number-item-one-page">
+                    <option name="number-item-one-page" value="2">8</option>
+                    <option name="number-item-one-page" value="4">12</option>
+                    <option name="number-item-one-page" value="6">16</option>
+                    <option name="number-item-one-page" value="8">20</option>
+                </select> -->
+            </div>
+        </div>
+    </div>
+    <div class="best-seller">
+        <div class="best-seller_title">
+            <h3>SÁCH BÁN CHẠY</3>
+        </div>
+        <div class="best-sller_products">
+            <div class="best-seller_one-product products-items_product">
+                <img src="images/ao_da.jpg" alt="">
+                <div class="products-items_info">
+                    <p class="name">Ảo dạ</p>
+                    <p class="price"><span>55000</span><i class="fas fa-shopping-cart"></i></p>
+                    <h6>Best<br> Seller</h6>
+                </div>
+            </div>
+            <div class="best-seller_one-product products-items_product">
+                <img src="images/suoi_nguoi.jpg" alt="">
+                <div class="products-items_info">
+                    <p class="name">Suối Nguồn</p>
+                    <p class="price"><span>110000</span><i class="fas fa-shopping-cart"></i></p>
+                    <h6>Best<br> Seller</h6>
+                </div>
+            </div>
+            <div class="best-seller_one-product products-items_product">
+                <img src="images/tat_den.jpg" alt="">
+                <div class="products-items_info">
+                    <p class="name">Tắt Đèn</p>
+                    <p class="price"><span>80000</span><i class="fas fa-shopping-cart"></i></p>
+                    <h6>Best<br> Seller</h6>
+                </div>
+            </div>
+            <!-- <div class="best-seller_one-product products-items_product">
+                    <img src="images/ao_da.jpg" alt="">
+                    <div class="products-items_info">
+                        <p class="name">Ảo dạ</p>
+                        <p class="price"><span>55.000</span><i class="fas fa-shopping-cart"></i></p>
+                    </div>
+                </div> -->
+        </div>
+    </div>
+    <div class="buy-products">
+        <div class="container">
+            <h2 class="">GIỎ HÀNG CỦA BẠN:</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header">SẢN PHẨM</span>
+                <span class="cart-price cart-header ">GIÁ</span>
+                <span class="cart-quantity cart-header ">SỐ LƯỢNG</span>
+            </div>
+            <div class="cart-items">
+                <!-- <div class="one-item">
+                    <div class="cart-item">
+                        <img class="cart-item-image" src="images/tran_trui_giua_bay_soi.jpg" width="100" height="100">
+                        <span class="cart-item-title">${title}</span>
+                    </div>
+                    <span class="cart-price">${price}</span>
+                    <div class="cart-quantity">
+                        <input class="cart-quantity-input" type="number" value="1">
+                        <button class="btn btn-remove" type="button">REMOVE</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">THÀNH TIỀN :</strong>
+                <span class="cart-total-price">0 VND</span>
+            </div>
+            <button class="btn cart_btn-purchase" type="button">MUA HÀNG</button>
+        </div>
+    </div>
+
+    <div class="partner">
+        <div class="container">
+            <div class="partner_title">
+                <h3>ĐỐI TÁC PHÂN PHỐI</h3>
+            </div>
+            <div class="partner_logo">
+                <a href=""> <img src="images/doitac_shopee.png" alt=""></a>
+                <a href=""><img src="images/vinabook-1.png" alt=""></a>
+                <a href=""><img src="images/FASAHA.png" alt=""></a>
+                <a href=""> <img src="images/phuongnam.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <h3>OURS STORES</h3>
+            <div class="footer_store hcm">
+                <h4>Hồ Chí Minh</h4>
+                <ul>
+                    <li>Điện thoại: 0903133246</li>
+                    <li>Địa Chỉ: 12-Nguyễn Đình Chiểu-Quận 3-Hồ Chí Minh</li>
+                    <li>Email:Bookstore@gmail.com</li>
+                    <li>Fax</li>
+                </ul>
+            </div>
+            <div class="footer_store hn">
+                <h4>Hà Nội</h4>
+                <ul>
+                    <li>Điện thoại: 0913432717</li>
+                    <li>Địa Chỉ: 233-Nguyễn Văn Thủ-Quận Ba Đình-Hà Nội</li>
+                    <li>Email:Bookstore@gmail.com</li>
+                    <li>Fax</li>
+                </ul>
+            </div>
+            <div class="footer_social">
+                <ul>
+                    <li><i class="fab fa-facebook-square"></i></li>
+                    <li><i class="fab fa-youtube-square"></i></li>
+                    <li><i class="fab fa-twitter-square"></i></li>
+                    <li> <i class="fab fa-instagram"></i></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
