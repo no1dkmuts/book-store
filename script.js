@@ -1,25 +1,11 @@
-// SELECT CAROUSEL
+//CREAT SLIDE
 const carousel = document.querySelector(".carousel");
-
-// SELECT NEXT BUTTON
 const nextButton = document.querySelector(".right-btn");
-
-// SELECT LEFT BUTTON
 const previousButton = document.querySelector(".left-btn");
-
-// SELECT THE NAV
 const nav = document.querySelector(".nav");
-
-// SELECT ALL THE DOTS
 const dots = [...nav.children];
-
-// SELECT ALL THE SLIDES INSIDE THE CAROUSEL
 const slides = [...carousel.children];
-
-// CALCULATE THE SLIDE WIDTH
 let slideWidth = slides[0].getBoundingClientRect().width;
-console.log(slideWidth)
-// POSITION THE SLIDES HORIZONTALY
 function positionSlides(slides) {
     for (let index = 0; index < slides.length; index++) {
         slides[index].style.left = slideWidth * index + "px";
@@ -36,7 +22,7 @@ nextButton.addEventListener("click", function () {
     moveToDot(nextSlide, slides, nav, dots);
 });
 
-// ON LEFT BUTTON CLICK, WE MOVE(TranslateX) THE CAROUSEL TO THE RIGHT
+
 previousButton.addEventListener("click", function () {
     const currentSlide = carousel.querySelector(".active");
     const previousSlide = currentSlide.previousElementSibling;
@@ -46,66 +32,51 @@ previousButton.addEventListener("click", function () {
     moveToDot(previousSlide, slides, nav, dots);
 });
 
-// ON DOT CLICK
+
 nav.addEventListener("click", function (e) {
-
-    // if we didn't click on a dot, we exit
     if (e.target === nav) return;
-
-    // SELECT THE CLICKED DOT
     const targetDot = e.target;
-
-    // SELECT THE CURRENT DOT
     const currentDot = nav.querySelector(".active");
-
-    // SELECT THE CURRENT SLIDE
     const currentSlide = carousel.querySelector(".active");
-
-    // find the index of the dot, so we can target the right slide
     let targetDotIndex = findIndex(targetDot, dots);
-
-    // SELECT THE TARGET SLIDE
     const targetSlide = slides[targetDotIndex];
-
     moveToSlide(carousel, currentSlide, targetSlide);
     toggleActive(currentDot, targetDot);
     hideButton(targetSlide, slides);
 })
 
-// MOVE TO DOT
+
 function moveToDot(targetSlide, slides, nav, dots) {
     let slideIndex = findIndex(targetSlide, slides);
     const currentDot = nav.querySelector(".active");
     const targetDot = dots[slideIndex];
     toggleActive(currentDot, targetDot);
 }
-// MOVE TO SLIDE
+
 function moveToSlide(carousel, currentSlide, targetSlide) {
     const position = targetSlide.style.left;
     carousel.style.transform = `translateX(-${position})`;
     toggleActive(currentSlide, targetSlide);
 }
 
-// Toggle ACTIVE CLASS
+
 function toggleActive(current, target) {
     current.classList.remove("active");
     target.classList.add("active");
 }
 
-// HIDE BUTTON
+
 function hideButton(targetSlide, slides) {
-    // If the target slide is the first slide the previous button must be hidden
-    // and the next button must be shown
+
     if (targetSlide === slides[0]) {
         previousButton.classList.add("hide");
         nextButton.classList.remove("hide");
     } else if (targetSlide === slides[slides.length - 1]) {
-        // If the target slide is the last slide the next button must be hidden
-        // and the previous button must be shown
+
         nextButton.classList.add("hide");
         previousButton.classList.remove("hide");
     } else {
-        // if none of the above is true, we show both the next and prevoius button
+
         previousButton.classList.remove("hide");
         nextButton.classList.remove("hide");
     }
@@ -121,18 +92,19 @@ function findIndex(item, items) {
 }
 
 
+//SHOW  MENU
+
+const showNav = document.querySelector(".header_show-nav")
+const line = document.querySelectorAll(".header_show-nav div");
+showNav.addEventListener("click", () => {
+    document.querySelector(".header_nav-links ul").classList.toggle("nav-active");
+    document.querySelector(".header_nav-links ul").style.display = "flex";
+    showNav.classList.toggle("active");
+})
 
 
-
-
-
-
-
-
-
-
-//Show products
-
+//SHOW PRODUCTS//
+//CREAT LIST PRODUCTS
 const product = [
     { id: 21, price: 80000, image: "images/nghin_le_mot_dem.jpg", title: "Nghìn Lẻ Một Đêm II" },
     { id: 12, price: 40000, image: "images/giong_to.jpg", title: "Giông Tố" },
@@ -176,15 +148,7 @@ const product = [
     { id: 26, price: 118000, image: "images/rung_sau_tham_tham.jpg", title: "Rừng Sâu Thăm Thẳm    " },
 ]
 
-const showNav = document.querySelector(".header_show-nav")
-const line = document.querySelectorAll(".header_show-nav div");
-showNav.addEventListener("click", () => {
-    document.querySelector(".header_nav-links ul").classList.toggle("nav-active");
-    document.querySelector(".header_nav-links ul").style.display = "flex";
-    showNav.classList.toggle("active");
 
-
-})
 
 var currentPage = 1;
 var perPage = 8;
@@ -235,7 +199,7 @@ function showProducts() {
     addToCartButtons = document.getElementsByClassName('fa-shopping-cart')
     for (var i = 0; i < addToCartButtons.length; i++) {
         var button = addToCartButtons[i];
-        console.log(button)
+
         button.addEventListener('click', addToCartClicked)
     }
 }
@@ -262,9 +226,7 @@ function prevPage() {
         showProducts();
     })
 }
-nextPage();
-prevPage();
-showNumberPage();
+
 function showNumberPage() {
     html = '';
     for (let i = 1; i <= totalPage; i++) {
@@ -291,20 +253,18 @@ function changePage() {
         })
     }
 
-    // ready();
+
 }
+showNumberPage();
+nextPage();
+prevPage();
 changePage();
 
 
-//Shopping products
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready)
-// } else {
-//     ready()
-// }
 
-// function ready() {
 
+
+//CREATE CART
 var addToCartButtons;
 var removeCartItemButtons = document.getElementsByClassName('btn-remove')
 for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -321,12 +281,12 @@ for (var i = 0; i < quantityInputs.length; i++) {
 addToCartButtons = document.getElementsByClassName('fa-shopping-cart')
 for (var i = 0; i < addToCartButtons.length; i++) {
     var button = addToCartButtons[i];
-    console.log(button)
+
     button.addEventListener('click', addToCartClicked)
 }
 
 document.getElementsByClassName('cart_btn-purchase')[0].addEventListener('click', purchaseClicked)
-// }
+
 
 function addToCartClicked(event) {
     var button = event.target
@@ -371,7 +331,7 @@ function removeCartItem(event) {
 }
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
+    alert('Cảm ơn bạn đã mua hàng')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
@@ -386,7 +346,7 @@ function addItemToCart(title, price, imageSrc) {
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
-            alert('This item is already added to the cart')
+            alert('Sản phẩm đã có trong giỏ hàng của bạn')
             return;
         }
     }
@@ -405,6 +365,11 @@ function addItemToCart(title, price, imageSrc) {
     oneItem.getElementsByClassName('btn-remove')[0].addEventListener('click', removeCartItem)
     oneItem.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
+
+
+
+
+
 
 
 
